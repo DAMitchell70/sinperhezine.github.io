@@ -98,12 +98,92 @@ function addFriend(person, object){
 }
 
 function isFriend(person, object){
-    console.log(object);
-    console.log(person);
-    var bool = false;
-    for (var i = 0; i < object.friends.length; i++) {
-        if(object.friends.toLowerCase() === person.toLowerCase())
-            bool = true
+    //console.log(person);
+   // var bool = false;
+    if(object.hasOwnProperty('friends') === true)
+    {
+     //   console.log(object);
+     for (var i = 0; i < object.friends.length; i++) {
+        if(object.friends[i].toLowerCase() === person.toLowerCase())
+            return true;
+        }
     }
-    return bool;
+     return false;
+}
+//TODO: needs to be finished
+var functionRun =0;
+function nonFriends(name,data ){
+    functionRun++;
+    // // array to hold people who are not firends
+     console.log("this function has run "+functionRun);
+    // console.log(name);
+     console.log(data);
+    var arr = [];
+    // for loop to go throught data
+    for (var i = 0; i < data.length; i++) {
+        // a catch all bool, should one thing be true it switches it to true with no way of switching back 
+        // outside of a new iteration of the loop
+        var found = false;
+        // if statement to ensure that we are not looking at the given name, making sure the person friends
+        // in their friends list
+            if(name !== data[i].name &&
+            data[i].hasOwnProperty('friends') === true ){
+                if(data[i].friends.length > 0){
+                 //console.log("people in friends:"+data[i].friends.length );
+                 //for loop to loop throught the friends list on the object selected in the frist loop
+                 for (var x = 0; x < data[i].friends.length; x++) {
+                     //compare the name to a select name in the for loop while forcing it to be lower case to 
+                     // prevent false negatives
+                     // console.log("loop iteration:"+x);
+                   //   console.log(data[i].name+" firends:"+data[i].friends[x].toLocaleLowerCase());
+                    if(name.toLocaleLowerCase()=== data[i].friends[x].toLocaleLowerCase()){
+                        // if it is a match the bool found becomes true
+                        found = true;
+                        }
+                    }
+                }
+                 // if found is still false push the name of the data to arr
+                if(found === false)
+                    arr.push(data[i].name);
+                   
+            }
+    }
+    // after all loops return the array
+     console.log(arr);
+    return arr;
+}
+
+function updateObject(object, key, value){
+    // console.log(object);
+    // console.log(key);
+    // console.log(value);
+    object[key] = value;
+    return object;
+}
+
+function removeProperties(object, arr){
+  //  console.log(object);
+    //console.log(arr);
+    var newObject = object;
+    for(var key in newObject){
+        for (var i = 0; i < arr.length; i++) {
+            if(key.toLowerCase()=== arr[i].toLowerCase()){
+                delete newObject[key];
+            }
+        }
+    }
+    return newObject;
+}
+
+function dedup(arr){
+    var value ="";
+    var newArr =[];
+    for (var i = 0; i < arr.length; i++) {
+        if(value !== arr[i]){
+        value = arr[i];
+        newArr.push(arr[i]);
+            
+        }
+    }
+    return newArr;
 }
