@@ -1,13 +1,14 @@
 var p1Button = document.querySelector("#p1");
 var p2Button = document.querySelector("#p2");
 var resetButton = document.querySelector("#reset");
-var input= document.querySelector("input");
-var h1 = document.querySelector("h1");
+var input = document.querySelector("input");
 var p1Span = document.querySelector("#p1Score");
 var p2Span = document.querySelector("#p2Score");
+var goalText = document.querySelector("p");
+var winningGoalDisplay = document.querySelector("p span");
 var goal = 5;
-var p1ScoreAmmount =0;
-var p2ScoreAmmount =0;
+var p1ScoreAmmount = 0;
+var p2ScoreAmmount = 0;
 var gameWon = false;
 
 p1Button.addEventListener("click", function(){
@@ -35,6 +36,12 @@ resetButton.addEventListener("click", function(){
 		updateScore();
 		p1Span.classList.remove("winner");
 		p2Span.classList.remove("winner");
+});
+
+input.addEventListener("change", function(){
+	goal = input.value;
+	winningGoalDisplay.textContent = input.value;
+	//alert("changed the goal to " +input.value);
 });
 
 function updateScore(){
