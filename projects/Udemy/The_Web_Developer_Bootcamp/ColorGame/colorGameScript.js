@@ -11,33 +11,31 @@ var hardMode = true;
 
 //setGame();
 colorDisplay.textContent = pickedColor;
-for (var i = 0; i < sqaures.length; i++) {
-	//add initial color to sqaures
-	sqaures[i].style.backgroundColor = colors[i];
-
+for(var i = 0; i < sqaures.length; i++) {
+//add initial color to sqaures
+sqaures[i].style.backgroundColor = colors[i];
 	//add click listeners to sqaures
-	sqaures[i].addEventListener("click", function () {
-		//grab color of clicked sqaure
-		var clickedColor = this.style.backgroundColor;
-		//compare color to pickedColor
-
+sqaures[i].addEventListener("click", function () {
+//grab color of clicked sqaure
+var clickedColor = this.style.backgroundColor;
+//compare color to pickedColor
 		if (clickedColor === pickedColor) {
-			console.log(clickedColor, pickedColor)
-			changeColor(clickedColor);
-			messageDisplay.textContent = "Correct!";
-			if (i < mode) {
-				h1.style.backgroundColor = clickedColor;
-			}
-			btnNewColor.textContent = "Play Again?";
-		} else {
-			this.style.backgroundColor = "#232323";
-			messageDisplay.textContent = "Try Again";
-		}
-	});
+	console.log(clickedColor, pickedColor)
+	changeColor(clickedColor);
+	messageDisplay.textContent = "Correct!";
+	if (i < mode) {
+		h1.style.backgroundColor = clickedColor;
+	}
+	btnNewColor.textContent = "Play Again?";
+} else {
+	this.style.backgroundColor = "#232323";
+	messageDisplay.textContent = "Try Again";
+}
+});
 }
 
 easyBtn.addEventListener("click", function () {
-	if (hardMode === true) {
+if (hardMode === true) {
 		easyBtn.classList.add("selected");
 		hardBtn.classList.remove("selected");
 		//generateRandomColors(3);
@@ -63,8 +61,10 @@ btnNewColor.addEventListener("click", function () {
 	//console.log(colors);
 	if (hardMode === false) {
 		setGame(3);
+		pickColor(3);
 	} else {
 		setGame(6);
+		pickColor(6);
 	}
 });
 
@@ -82,6 +82,7 @@ btnNewColor.addEventListener("click", function () {
 
 function setGame(mode) {
 	messageDisplay.textContent ="";
+	btnNewColor.textContent ="New Colors";
 	h1.style.backgroundColor = "steelblue";
 	colors = generateRandomColors(mode);
 	colorDisplay.textContent = pickedColor;
