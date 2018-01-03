@@ -1,41 +1,18 @@
-body {
-    background: rgb(125, 198, 205);
-    color: rgb(45, 45, 45);
-    padding: 10px;
-    font-family: arial;
+body{
+	background: rgba(0,0,0,1.00);
+	color: white;
+	text-align: center;
 }
-
-header {
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-[id=all-contents] {
-    max-width: 800px;
-    margin: auto;
-}
-
-
-/* Main navigation menu */
-
+/*
 nav {
-    background: rgb(239, 80, 41);
+    background: rgba(233,16,19,1.00);
     margin: 0 auto;
     display: flex;
     padding: 10px;
-}
-
-nav header {
-    display: flex;
     align-items: center;
-    color: rgb(255, 255, 255);
-    flex: 1;
 }
 
-nav ul {
-    list-style-image: none;
-}
-
+get list items to line up  next to each other
 nav li {
     display: inline-block;
     padding: 0 10px;
@@ -45,34 +22,10 @@ nav a {
     text-decoration: none;
     color: #fff;
 }
-
-
-/* Main container area beneath menu */
-
-main {
-    background: rgb(245, 238, 219);
-    display: flex;
-    flex-direction: column;
+*/
+.sidebar{
+	float:left;
 }
-
-[class=sidebar] {
-    margin-right: 25px;
-    padding: 10px;
-}
-
-[class=sidebar] img {
-    width: 200px;
-}
-
-[class=content] {
-    flex: 1;
-    padding: 15px;
-}
-
-.content h1, h2, h3, h4, h5, h6 {
-    margin: 10px;
-}
-
-.content section > a {
-    text-decoration: none;
+.centerPiece{
+	padding: 20px;
 }
