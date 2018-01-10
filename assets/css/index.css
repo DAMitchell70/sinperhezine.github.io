@@ -3,26 +3,7 @@ body{
 	color: white;
 	text-align: center;
 }
-/*
-nav {
-    background: rgba(233,16,19,1.00);
-    margin: 0 auto;
-    display: flex;
-    padding: 10px;
-    align-items: center;
-}
 
-get list items to line up  next to each other
-nav li {
-    display: inline-block;
-    padding: 0 10px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #fff;
-}
-*/
 .sidebar{
 	float:left;
 }

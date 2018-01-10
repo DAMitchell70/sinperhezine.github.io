@@ -1,10 +1,9 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Untitled Document</title>
-</head>
+//Current project listing
+$(".currentProjects").append("<li><span class ='websiteDesign PersonalSite '><b>Personal Website:</b>7</span>You are pretty much looking at it feel free to inspect the site to your heart's content.</li>");
+$(".currentProjects").append("<li><span class ='NDA gameProject '><b>NDA Game Project:</b></span> Can't talk about it right now., but I will when the NDA gets lifted.</li>");
+$(".currentProjects").append("<li><span class ='UnityProject gameProject '><b>Ghost System - Unity3d tool kit:</b></span> This is a toolkit that I have started working on to make life easier on myself. Currently, it is being built around a procedural content generation.</li>");
+$(".currentProjects").append("<li><span class ='websiteDesign OmniDex '><b>OmniDex Website:</b></span> An idea for my first major independent project, still being brainstormed.</li>");
 
-<body>
-</body>
-</html>
+//completed project listing
+$(".completedProjects").append("<li id='starSider'></li>");
+$("#starSider").append("<div class='media'> <div class='media-right media-middle' > <a href='#'> <img class='media-object' src='assets/Media/pictures/unity.png' alt='Unity3d' width='100px' height='100px'> </a> </div><div class='unityProject media-body'><div class='media-heading'><span><a href='https://play.google.com/store/apps/details?id=com.ThridCoreStudio.StarSider'><h1>Star Siders:</h1></a> </span> </div>An Abandoned Andiord game thanks to consecutive hardware failure causing me to lose everything I had at the time ( both my main and backup hard drives failed on me at the same time).  what started out as a Galaga clone was going to turn into the game based around randomly generated ships you collected that also served as lives. When a ship was destroyed it was gone. the game should still be up on google play store for those who are interested in playing. When I'm able to get back to it I'm most likely going to remake it original idea it was going to be. </div></div></li>");
